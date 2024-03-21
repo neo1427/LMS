@@ -8,7 +8,7 @@ public class App {
     
     public static void main( String[] args ) {
         DBManagement dbManagement = new DBManagement();
-
+        new AddQuiz();
         System.out.println("Which way you want to enter the questions: ");
     }
 }
