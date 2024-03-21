@@ -1,0 +1,18 @@
+ // ArrayList<String> getJSONDataTemp() throws SQLException{
+    //     ResultSet rs = con.createStatement().executeQuery("SELECT * FROM t1");
+    //     while(rs.next()) {
+    //         arrayList.add(rs.getString(2));
+    //     }
+    //     return arrayList;
+    // }
+
+    // public String addJSONDataTemp(JSONArray jsonArray) throws SQLException {
+    //     String value = "{\"0\":";
+    //     value += jsonArray.getJSONObject(0);
+    //     for(int ctr = 1; ctr < jsonArray.length(); ctr++) {
+    //         value += ",\"" + ctr + "\":";
+    //         value = value + jsonArray.getJSONObject(ctr);
+    //     }
+    //     value+="}";
+    //     return value;
+    // }
