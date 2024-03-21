@@ -1,0 +1,87 @@
+// System.out.println( "Hello World!, phir aaye hai yahi" );
+        DBManagement dbm = new DBManagement();
+
+        // JSONParser parser = new JSONParser();
+        // JSONObject json = new JSONObject();
+        // json.put("Name", "Srijan Airon");
+        // json.put("age", 22);
+        // json.put("Understanding", null);
+
+        // System.out.println(json.toJSONString());
+
+        // JSONObject jsonObject = null;
+        // try {
+        //     ArrayList<String> arrayList = dbm.getJSONDataTemp();
+        //     jsonObject = (JSONObject) parser.parse(arrayList.get(1));
+        // } catch (ParseException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // } catch (SQLException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // }
+        // System.out.println(jsonObject.toJSONString());
+        // System.out.println(jsonObject.get("items"));
+        // System.out.println(jsonObject.get("bbb"));
+        // String string = jsonObject.get("items").toString();
+        // JSONObject jsonObject2 = null;
+        // try {
+        //     jsonObject2 = (JSONObject) parser.parse(string);
+        // } catch (ParseException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // }
+        // System.out.println(jsonObject2.get("products"));
+
+        // InputStream input = App.class.getClassLoader().getResourceAsStream("learning_management_system/src/main/java/com/learning_management_system/csv/trial.csv");
+        // System.out.println(input.toString());
+        // String CsvAsString = new BufferedReader(new InputStreamReader(input)).lines().collect(Collectors.joining("\n"));
+        // System.out.println(CsvAsString);
+        // String json = CDL.toJSONArray(CsvAsString).toString();
+        // System.out.println(json);
+
+        // try (BufferedReader br = new BufferedReader(new FileReader("learning_management_system/src/main/java/com/learning_management_system/csv/trial.csv"))) {
+        //     String line;
+        //     while((line = br.readLine()) != null) {
+        //         System.out.println(line);
+        //     }
+
+        // } catch (IOException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // }
+        
+        // try {
+        //     BufferedReader br = new BufferedReader(new FileReader("learning_management_system/src/main/java/com/learning_management_system/csv/trial.csv"));
+        //     String CsvAsString = br.lines().collect(Collectors.joining("\n"));
+        //     // System.out.println(CsvAsString);
+        //     JSONArray jsonArray = CDL.toJSONArray(CsvAsString);
+        //     // String json = CDL.toJSONArray(CsvAsString).toString();
+        //     // System.out.println(jsonArray.getJSONObject(1));
+        //     String json = dbm.addJSONDataTemp(jsonArray);
+        //     br.close();
+        //     JSONParser parser = new JSONParser();
+        //     JSONObject jsonObject = (JSONObject) parser.parse(json);
+        //     System.out.println(jsonObject.toString());
+        //     System.out.println(jsonObject.size());
+        //     System.out.println(((JSONObject)(jsonObject.get("0"))).get("First name"));
+        //     System.out.println(jsonObject.get("1"));
+        //     // JSONObject jsonObj = new JSONObject();
+        //     // jsonObj.put("name", "Srijan");
+        //     // jsonObj.put("age", "22");
+        //     // jsonObj.put("attr", "Something");
+        //     // System.out.println(jsonObj);
+        // } catch (FileNotFoundException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // } catch (IOException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // } catch (SQLException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // } 
+        // catch (ParseException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // }
