@@ -1,0 +1,7 @@
+git remote set-url origin <reppo URL>.git
+git init
+git checkout -b <branch name>
+git pull
+git pull --rebase (if error in pull)
+git add .
+git commit -m "message".
