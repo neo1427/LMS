@@ -1,37 +1,40 @@
-package com.learning_management_system;
-
-
 import java.util.*;
 
-class Main {
+
+public class MainPrompt {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        JDBCServer jdbcServer = new JDBCServer();
+        System.out.println("-----WELCOME TO IAMNEO-----");
+        System.out.println("What action do you want to perform:");
+        //System.out.println("What action do you want to perform:");
+        String input = scanner.nextLine();
+
+        System.out.println("Are you a student or teacher:");
+        System.out.println("Type 1 if you are a Student");
+        System.out.println("Type 2 if you are a Teacher");
+        System.out.println("Type 3 to Exit");
+
 
         while (true) {
-            System.out.println("UI Side Display:");
-            System.out.println("Are you a student or teacher:");
-            System.out.println("1. Student");
-            System.out.println("2. Teacher");
-            System.out.println("3. Exit");
-            System.out.print("User Input: ");
             int option = scanner.nextInt();
 
             switch (option) {
                 case 1:
-                    StudentPrompt studentPrompt = new StudentPrompt(jdbcServer);
-                    studentPrompt.showStudentPrompts();
+                    System.out.print("Enter Student ID: ");
+                    int studentId = scanner.nextInt();
+                    Student student = new Student(studentId);
+                    student.showPrompts(scanner);
                     break;
                 case 2:
-                    TeacherPrompt teacherPrompt = new TeacherPrompt(jdbcServer);
-                    teacherPrompt.showTeacherPrompts();
+                    System.out.print("Enter Teacher ID: ");
+                    int teacherId = scanner.nextInt();
+                    Teacher teacher = new Teacher(teacherId);
+                    teacher.showPrompts(scanner);
                     break;
                 case 3:
-                    System.out.println("Exiting...");
-                    jdbcServer.closeConnection();
-                    System.exit(0);
+                    Exit.exitProgram();
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    System.out.println("Invalid option. Please select 1, 2, or 3.");
             }
         }
     }
