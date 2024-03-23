@@ -1,61 +1,59 @@
 import java.util.Scanner;
 
-public class TeacherPrompt {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int option;
+class Teacher {
+    private int teacherId;
 
-        // Main prompt for teacher
-        do {
-            // Display menu options
-            System.out.println("Teacher Prompts:");
-            System.out.println("What action do you want to perform?");
+    public Teacher(int teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public void createQuiz(Scanner scanner) {
+        System.out.println("Creating a new quiz as teacher " + teacherId + ".");
+        System.out.print("Enter Start Time (HH:mm): ");
+        String startTime = scanner.next();
+        System.out.print("Enter Buffer Time (minutes): ");
+        int bufferTime = scanner.nextInt();
+        System.out.print("Enter End Time (HH:mm): ");
+        String endTime = scanner.next();
+
+        // Fetch questions and options from QuestionBank
+        String[] questions = QuestionBank.questions;
+        String[][] options = QuestionBank.options;
+
+        // Create a new quiz
+        Quiz quiz = new Quiz(1, startTime, bufferTime, endTime, questions, options);
+        // Save the quiz or perform further operations
+        
+        System.out.println("Quiz created successfully with the following details:");
+        System.out.println("Start Time: " + startTime);
+        System.out.println("Buffer Time: " + bufferTime + " minutes");
+        System.out.println("End Time: " + endTime);
+    }
+
+    public void showPrompts(Scanner scanner) {
+        while (true) {
+            System.out.println("\nTeacher Main Prompt:");
+            System.out.println("What action do you want to perform:");
             System.out.println("1. Create a Quiz");
-            System.out.println("2. See Results");
+            System.out.println("2. Grade Quizzes");
             System.out.println("3. Exit");
-            System.out.print("User Input: ");
 
-            // Ensure that user input is an integer
-            while (!scanner.hasNextInt()) {
-                System.out.println("Invalid input! Please enter a number (1, 2, or 3).");
-                scanner.nextLine(); // Consume invalid input
-                System.out.print("User Input: ");
-            }
-            option = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            int option = scanner.nextInt();
 
-            // Handle user option
             switch (option) {
                 case 1:
-                    // Create a quiz
-                    createQuiz();
+                    createQuiz(scanner);
                     break;
                 case 2:
-                    // See results
-                    showResults();
+                    System.out.println("Grading quizzes...");
+                    // Logic to grade quizzes
                     break;
                 case 3:
-                    // Exit the program
-                    System.out.println("Exiting the program...");
+                    Exit.exitProgram();
                     break;
                 default:
-                    // Invalid option
-                    System.out.println("Invalid option! Please enter 1, 2, or 3.");
+                    System.out.println("Invalid option. Please select 1, 2, or 3.");
             }
-        } while (option != 3);
-
-        scanner.close();
-    }
-
-    // Method to create a quiz
-    private static void createQuiz() {
-        System.out.println("Creating a quiz...");
-        // Implement quiz creation logic here
-    }
-
-    // Method to show results
-    private static void showResults() {
-        System.out.println("Showing results...");
-        // Implement logic to display results
+        }
     }
 }
